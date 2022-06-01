@@ -58,3 +58,15 @@ pencil_box.clear()                          # Clears the pencil_box list
 print(pencil_box)                           # []
 
 ## Tuples ##
+
+coordinates = (1, 4.3)                      # Tuples are mostly used for coordinates or CONSTANT arrays
+print(coordinates)                          # (1, 4.3)
+
+important_coordinates = [
+    ("Village with Mending Villagers", (649, 66, -967)),
+    ("Spider Spawner", (923, 40, -486)),
+    ("Large Copper Vein", (804, 24, 52)),
+    ("Zombie Spawner", (806, 28, -86))
+    ]
+
+print(important_coordinates[2])             # ('Large Copper Vein', (804, 24, 52))
