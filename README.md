@@ -14,3 +14,11 @@ The source codes (`py`) in this folder are self-written with reference to [FreeC
 ## **Kaggle**
 
 The Jupyter Notebooks (`ipynb`) in this folder are downloaded directly and edited from [Kaggle](https://www.kaggle.com/learn/python).
+
+---
+
+# **Other Resources**
+
+For more informations on `python`, please refer to [Python's Documentation](https://docs.python.org/3/) for full guide.
+
+Some `python`-related cheatsheets can be found [here](https://blog.finxter.com/collection-5-cheat-sheets-every-python-coder-must-own/).
