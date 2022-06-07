@@ -67,6 +67,6 @@ important_coordinates = [
     ("Spider Spawner", (923, 40, -486)),
     ("Large Copper Vein", (804, 24, 52)),
     ("Zombie Spawner", (806, 28, -86))
-    ]
+]
 
 print(important_coordinates[2])             # ('Large Copper Vein', (804, 24, 52))
