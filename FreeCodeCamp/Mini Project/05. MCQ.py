@@ -30,7 +30,7 @@ def run_main():
 
         user_answer = input(question.prompt)[0]
 
-        if((user_answer == question.ans.upper()) | (user_answer == question.ans.lower())):
+        if((user_answer == question.ans.upper()) or (user_answer == question.ans.lower())):
             score += 1
         else:
             continue

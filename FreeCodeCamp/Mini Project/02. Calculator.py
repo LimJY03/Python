@@ -14,32 +14,23 @@ def run_main():
 
         operator = input("Enter an operator: ")
         
-        # User Entered =
-        if(operator == '='):
-            break
-        
-        # Invalid Operator Entered
-        while((operator != '+') & (operator != '-') & (operator != '*') & (operator != '/') & (operator != '^')):
+        # Choose Operation Based On Operator
+        match operator:
 
-            print("Enter a valid operator! (+ or - or * or / or ^)")
-            operator = input("Enter an operator: ")
+            case '+': total += float(input("Enter a number: "))
+            case '-': total -= float(input("Enter a number: "))
+            case '*': total *= float(input("Enter a number: "))
+            case '/': total /= float(input("Enter a number: "))
+            case '^': total **= float(input("Enter a number: "))
+            case '=': break
 
-        # User Entered Next Number After Operator
-        num = float(input("Enter a number: "))
+            case _:  # Default Case
+                print("Enter a valid operator! (+ or - or * or / or ^)")
 
-        # Perform Calculation Based On Operator
-        if(operator == '+'):
-            total += num
-        elif(operator == '-'):
-            total -= num
-        elif(operator == '*'):
-            total *= num
-        elif(operator == '/'):
-            total = divide(total, num)
-        elif(operator == '^'):
-            total **= num
+    # Check if the result is an integer
+    if((total % 1) == 0.0): 
+        total = int(total)
 
-    # Displays Result
     print(total)
 
 # Execute code
