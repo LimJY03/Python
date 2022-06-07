@@ -1,4 +1,7 @@
 def get_input():
+    '''
+    This function gets user inputs and returns them in an array.
+    '''
 
     userinput = []
 
@@ -11,6 +14,9 @@ def get_input():
     return userinput
 
 def file_structurer(userinput):
+    '''
+    This function returns structured lines of texts and returns them in an array.
+    '''
 
     h1 = '# ' + '**%s**' % userinput[0]
     p = userinput[1]
@@ -23,6 +29,9 @@ def file_structurer(userinput):
     return [h1, p, line_ref]
 
 def write_tofile(structured_list):
+    '''
+    This function combines all elements in the array argument into a string, and writes it to README.md
+    '''
 
     content = '\n\n'.join(structured_list)
 
@@ -31,7 +40,10 @@ def write_tofile(structured_list):
         f.write(content)
 
 def run_main():
-
+    '''
+    This function executes all statements in it.
+    '''
+    
     user_input = get_input()
     structured_inlist = file_structurer(user_input)
     write_tofile(structured_inlist)

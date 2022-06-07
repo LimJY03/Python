@@ -1,6 +1,12 @@
 # Handling Exceptions with Try
 
 def quotient(n1, n2):
+    '''
+    This function will determine the quotient result of two numbers.
+
+    >>> quotient(9, 3)
+    3.0
+    '''
     
     result = 0
 

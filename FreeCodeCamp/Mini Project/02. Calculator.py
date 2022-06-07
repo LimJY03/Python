@@ -1,4 +1,10 @@
 def divide(num1, num2):
+    '''
+    This function determines the quotient of two numbers.
+
+    >>> quotient(9, 3)
+    3.0
+    '''
 
     if(num2 != 0):
         return num1 / num2
@@ -7,6 +13,9 @@ def divide(num1, num2):
         return num1
 
 def run_main():
+    '''
+    This function executes all statements in it.
+    '''
 
     total = float(input("Enter a number: "))
     

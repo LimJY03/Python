@@ -11,6 +11,9 @@ class chef:
         self.dessert = ["01. Jelly"]
 
     def must_know(self):
+        '''
+        This method displays all menu that the chef must know.
+        '''
 
         print("\nAppetizer:\n" + self.appetizer[0])
         print("\nMain Course:\n" + self.maincourse[0])
@@ -27,6 +30,9 @@ class western_chef(chef):
         self.dessert.append("02. Ice Cream")
 
     def menu(self):
+        '''
+        This method displays all menu that this chef knows.
+        '''
 
         print("\nAppetizer:\n" + '\n'.join(self.appetizer))
         print("\nMain Course:\n" + '\n'.join(self.maincourse))
@@ -43,6 +49,9 @@ class eastern_chef(chef):
         self.dessert.append("02. Red Bean Soup")
 
     def menu(self):
+        '''
+        This method displays all menu that this chef knows.
+        '''
 
         print("\nAppetizer:\n" + '\n'.join(self.appetizer))
         print("\nMain Course:\n" + '\n'.join(self.maincourse))

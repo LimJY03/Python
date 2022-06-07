@@ -6,6 +6,9 @@ class questions:
         self.ans = solution
 
 def define_questions():
+    '''
+    This function defines and structures all questions along with their answer and returns them in an array.
+    '''
 
     promptlist = []
 
@@ -22,6 +25,9 @@ def define_questions():
     return questionlist
 
 def run_main(): 
+    '''
+    This function executes all statements in it.
+    '''
 
     score = 0
     questionlist = define_questions()

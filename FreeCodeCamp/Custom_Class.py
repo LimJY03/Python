@@ -11,10 +11,16 @@ class students:
 
     # Creates Object Functions
     def should_honor(self):
+        '''
+        This method determines if the person's GPA is >= 3.90.
+        '''
 
         return self.gpa >= 3.90
 
     def years_to_graduate(self):
+        '''
+        This method determines the number of years left for the person to graduate.
+        '''
 
         if(self.year >= 4):
             return "Should graduate."
