@@ -32,19 +32,15 @@ def dig_pow(num, initial_power):
     initial_power = int(initial_power)
     
     total = 0
-    k = 0
 
     for i in str(num):
         total += int(i) ** initial_power
         initial_power += 1
 
-    while(True):
-        if((num * k) == total):
-            return k
-        elif(((num * k) != total) & ((num * k) < total)):
-            k += 1
-        else:
-            return -1
+    if(total % num == 0):
+        return total // num
+    else:
+        return -1
 
 returned_val = [dig_pow(89, 1), dig_pow(92, 1), dig_pow(695, 2), dig_pow(46288, 3)]
 
