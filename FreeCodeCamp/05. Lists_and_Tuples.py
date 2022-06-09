@@ -43,6 +43,11 @@ print(pencil_box.index("pen"))              # 0
 pencil_box.sort()                           # Sorts the pencil_box lists alphabetically in ascending order. The sort() function can only sort lists containing same datatype
 print(pencil_box)                           # ['correction tape', 'eraser', 'glue', 'highlighter', 'highlighter', 'paper clip', 'pen', 'pencil', 'ruler', 'scissors']
 
+# Alternatively:
+
+pencil_box_sorted = sorted(pencil_box)      # sorted() returns a value unlike .sort() that changes the list directly.
+print(pencil_box_sorted)                    # ['correction tape', 'eraser', 'glue', 'highlighter', 'highlighter', 'paper clip', 'pen', 'pencil', 'ruler', 'scissors']
+
 new_pencil_box = pencil_box.copy()          # Creates a copy of the pencil_box list and assign it to the new_pencil_box list
 
 new_pencil_box.reverse()                    # Reverses the order of strings in the new_pencil_box list
