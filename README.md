@@ -18,7 +18,7 @@ The Jupyter Notebooks (`.ipynb`) in this folder are downloaded directly and edit
 
 ## Problem Solving
 
-This folder stores source codes (`.py`) of some solved problems from [codewars](https://www.codewars.com/) and other sources.
+This folder stores source codes (`.py`) of some solved problems from [codewars](https://www.codewars.com/), [hackerrank](https://www.hackerrank.com/dashboard) and other sources.
 
 ---
 
