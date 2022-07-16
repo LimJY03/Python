@@ -1,5 +1,5 @@
 '''
-Given N point on a 2D plane as pair of (x, y) coordinates, Write a program to find the maximum number of point which lie on the same line.
+Given N point on a 2D plane as pair of (x, y) coordinates, write a program to find the maximum number of point which lie on the same line.
 
 Example 1:
 Input: A[][] = [[1,1],[2,2],[1,2],[3,3],[2,3]]
@@ -11,7 +11,7 @@ Input: A[][] = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]
 Output: 4
 Explanation: The maximum number of point which lie on same line are 4, those points are [3,2], [4,1], [2,3] and [1, 4].
 
-src = https://afteracademy.com/blog/max-points-on-the-straight-line
+src: "https://afteracademy.com/blog/max-points-on-the-straight-line"
 '''
 
 def get_gradient(xy1, xy2):
