@@ -1,4 +1,4 @@
-# **Python**
+# Python
 
 This repository stores the syntax and codes for `python` programming. The main sources of reference are **FreeCodeCamp on YouTube.com** and **Kaggle.com**.
 
@@ -6,23 +6,23 @@ There are three main folders in this repository:
 
 * FreeCodeCamp
 * Kaggle
-* Codewars
+* ProblemSolving
 
-## **FreeCodeCamp**
+## FreeCodeCamp
 
 The source codes (`.py`) in this folder are self-written with reference to [FreeCodeCamp on YouTube](https://www.youtube.com/watch?v=rfscVS0vtbw).
 
-## **Kaggle**
+## Kaggle
 
 The Jupyter Notebooks (`.ipynb`) in this folder are downloaded directly and edited from [Kaggle](https://www.kaggle.com/learn/python).
 
-## **Codewars**
+## Problem Solving
 
-This folder stores source codes (`.py`) of some solved questions from [codewars](https://www.codewars.com/).
+This folder stores source codes (`.py`) of some solved problems from [codewars](https://www.codewars.com/) and other sources.
 
 ---
 
-# **Other Resources**
+# Other Resources
 
 For more informations on `python`, please refer to [Python's Documentation](https://docs.python.org/3/) for full guide.
 
