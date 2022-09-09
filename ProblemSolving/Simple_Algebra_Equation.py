@@ -79,7 +79,7 @@ def solveEquation(equation: str) -> str:
             else: left_sep.append(changeSign(right_sep.pop(0)))
 
     left_sep = list(map(lambda x: x[0] + '1x' if len(x) == 2 else x, left_sep))
-    left_coefficient = sum(map(lambda x: int(x[:-1]) if x[1] != x else x.replace('x', '1x'), left_sep))
+    left_coefficient = sum(map(lambda x: int(x[:-1]) if x[1] != 'x' else x.replace('x', '1x'), left_sep))
     right_constant = sum(map(int, right_sep))
             
     return calc(coef=left_coefficient, cons=right_constant)
