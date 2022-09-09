@@ -29,63 +29,41 @@ Constraints:
 src: "https://leetcode.com/problems/solve-the-equation/"
 '''
 
-def separateExpression(expression: str) -> list[str]:
-
-    final = []
-    
-    for elem in expression.split('+'):
-
-        if elem.__contains__('-'):
-
-            if elem[0] != '-': 
-
-                elem = list(map(lambda x: f'-{x}', elem.split('-')))
-                elem[0] = elem[0].replace('-', '+')
-
-                final.extend(elem)
-
-            else: final.append(elem)
-
-        else: final.append(f'+{elem}')
-
-    return final
-
-def changeSign(term: str) -> str:
-    return term.replace('+', '-') if term[0] == '+' else term.replace('-', '+')
-
-def calc(coef: int, cons: int) -> str:
-    return 'x={}'.format(cons / coef if (cons % coef != 0) else cons // coef) if coef != 0 else 'No solution'
-
 def solveEquation(equation: str) -> str:
 
-    left, right = equation.split('=')
-    if (left == right): return 'Infinite solutions' 
+    if equation[0] != '-': equation = '+' + equation
+    if '=-' not in equation: equation = equation.replace('=', '=+')
+    
+    right, left = equation.replace('+x', '+1x').replace('-x', '-1x')[::-1].split('=')
+    if (left == right): return 'Infinite solutions'
 
-    left_sep = list(sorted(separateExpression(left), key=lambda x: ord(x[-1])))
-    right_sep = list(sorted(separateExpression(right), key=lambda x: ord(x[-1]), reverse=True))
+    left_coeff, left_const, right_coeff, right_const, temp = 0, 0, 0, 0, 0
+    is_coeff, is_left = False, True
 
-    if (len(left_sep) == 1) and (len(right_sep) == 1):
+    for char in f'{left}={right}':
 
-        if ('x' in left) and ('x' in right): return 'x=0'
-        elif ('x' not in left) and ('x' in right): return calc(coef=int(right[:-1]), cons=int(left))
+        if char == '=': is_left = False
 
-    else:
+        if char == 'x': is_coeff = True
+        elif char.isdigit(): temp = temp * 10 + int(char)
 
-        left_done, right_done = False, False
+        elif char in '+-':
 
-        while (not left_done) and (not right_done):
+            if is_left:
 
-            if left_sep[0].__contains__('x'): left_done = True
-            else: right_sep.append(changeSign(left_sep.pop(0)))
+                if is_coeff: left_coeff += int(char + str(temp))
+                else: left_const += int(char + str(temp))
 
-            if not right_sep[0].__contains__('x'): right_done = True
-            else: left_sep.append(changeSign(right_sep.pop(0)))
+            else:
 
-    left_sep = list(map(lambda x: x[0] + '1x' if len(x) == 2 else x, left_sep))
-    left_coefficient = sum(map(lambda x: int(x[:-1]) if x[1] != 'x' else x.replace('x', '1x'), left_sep))
-    right_constant = sum(map(int, right_sep))
-            
-    return calc(coef=left_coefficient, cons=right_constant)
+                if is_coeff: right_coeff += int(char + str(temp))
+                else: right_const += int(char + str(temp))
+
+            is_coeff, temp = False, 0
+        
+    const, coeff = (right_const - left_const), (left_coeff - right_coeff)
+    
+    return 'x={}'.format(const / coeff if (const % coeff != 0) else const // coeff) if coeff != 0 else 'No solution'
 
 if __name__ == '__main__': 
     
