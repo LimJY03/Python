@@ -67,15 +67,18 @@ def solveEquation(equation: str) -> str:
     if (len(left_sep) == 1) and (len(right_sep) == 1):
 
         if ('x' in left) and ('x' in right): return 'x=0'
-        elif ('x' not in left) and ('x' in right): return calc(coef=right, cons=left)
+        elif ('x' not in left) and ('x' in right): return calc(coef=int(right[:-1]), cons=int(left))
 
     else:
 
-        while True:
-            if left_sep[0].__contains__('x'): break
+        left_done, right_done = False, False
+
+        while (not left_done) and (not right_done):
+
+            if left_sep[0].__contains__('x'): left_done = True
             else: right_sep.append(changeSign(left_sep.pop(0)))
 
-            if not right_sep[0].__contains__('x'): break
+            if not right_sep[0].__contains__('x'): right_done = True
             else: left_sep.append(changeSign(right_sep.pop(0)))
 
     left_sep = list(map(lambda x: x[0] + '1x' if len(x) == 2 else x, left_sep))
@@ -88,8 +91,10 @@ if __name__ == '__main__':
     
     print(solveEquation('-5+x-4x+7=99x-5+7x'))
     print(solveEquation('x+5-3+x=6+x-2'))
+    print(solveEquation('x+5+x=6+x-2+3'))
     print(solveEquation('-5+3=x'))
     print(solveEquation('x=-5+3'))
+    print(solveEquation('23=-5x'))
     print(solveEquation('x=2x'))
     print(solveEquation('3x=3x'))
     print(solveEquation('3x+2=3x'))
