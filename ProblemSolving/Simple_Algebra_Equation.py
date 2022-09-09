@@ -43,10 +43,8 @@ def solveEquation(equation: str) -> str:
     for char in f'{left}={right}':
 
         if char == '=': is_left = False
-
-        if char == 'x': is_coeff = True
+        elif char == 'x': is_coeff = True
         elif char.isdigit(): temp = temp * 10 + int(char)
-
         elif char in '+-':
 
             if is_left:
