@@ -33,29 +33,30 @@ src: "https://www.codewars.com/kata/52ec24228a515e620b0005ef/train/python"
 '''
 
 def pattern(memory: list) -> int:
+    '''Pattern Generator'''
 
     temp, current, pair, diff = 0, len(memory) - 1, 1, 3
-    isPair, isAdd = True, True
+    is_pair, is_add = True, True
 
     while current >= 0:
 
-        if isPair:
+        if is_pair:
 
-            if isAdd: temp += memory[current]
+            if is_add: temp += memory[current]
             else: temp -= memory[current]
 
             current = current - pair
             
             if current >= 0:
 
-                if isAdd: temp += memory[current]
+                if is_add: temp += memory[current]
                 else: temp -= memory[current]
                 
             else: break
 
             pair += 1
 
-            isPair = False
+            is_pair = False
 
         else:
 
@@ -65,13 +66,14 @@ def pattern(memory: list) -> int:
 
             diff += 2
 
-            isPair, isAdd = True, not isAdd
+            is_pair, is_add = True, not is_add
 
     memory.append(temp)
 
     return memory
 
 def exp_sum(n: int) -> int:
+    '''exp_sum() Function'''
 
     memory = [1, 1, 2, 3]
 
